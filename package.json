@@ -1,0 +1,24 @@
+{
+	"name": "mmo-hpath",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^17.0.5",
+		"cross-env": "^7.0.3",
+		"eslint": "^8.10.0",
+		"mmo-tester": "^1.0.2",
+		"rimraf": "^3.0.2",
+		"typescript": "^4.5.4"
+	},
+	"scripts": {
+		"watch": "rimraf \"build\" && tsc --watch",
+		"build": "rimraf \"build\" && tsc",
+		"build:prod": "rimraf \"dist\" && tsc -p tsconfig.production.json",
+		"test": "node ./build/test/index.js",
+		"clean": "rimraf \"build\" \"dist\""
+	},
+	"dependencies": {
+		"mmo-tokenizer": "^1.0.0"
+	}
+}
